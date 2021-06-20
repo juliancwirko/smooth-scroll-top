@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px">
+    <div id="app">
+      <h3>SmoothScrollTop demo. Start scrolling...</h3>
+    </div>
+    <div><button id="button">Destroy SmoothScrollTop</button></div>
+
+    <script type="module">
+        import SmoothScrollTop from '../build/index.js';
+        const icon = document.createElement('div');
+        icon.style.cssText = `
+          width: 0; 
+          height: 0; 
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid white;
+        `;
+        const scrollTop = new SmoothScrollTop({ icon });
+        scrollTop.init();
+
+        // Destroy the SmoothScrollTop for demo purposes
+        const button = document.getElementById('button');
+        button.addEventListener('click', () => {
+          scrollTop.destroy();
+        });
+    </script>
+</body>
+</html>

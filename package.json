@@ -1,0 +1,39 @@
+{
+  "name": "smooth-scroll-top",
+  "type": "module",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "version": "1.0.0",
+  "description": "Smooth scroll to top of the page",
+  "types": "build/types",
+  "browser": "./build/index.js",
+  "exports": "./build/index.js",
+  "scripts": {
+    "build": "tsc && node minify.js",
+    "dev:lint": "eslint src/** --fix",
+    "dev:prettier": "prettier --write 'src/**/*.{js,ts,json}'",
+    "dev:server": "node dev-server.js",
+    "dev:watch": "tsc && concurrently 'tsc -w' 'npm run dev:server'",
+    "prepublishOnly": "npm run build"
+  },
+  "author": {
+    "name": "Julian Ćwirko",
+    "url": "https://www.julian.io",
+    "email": "julian.cwirko@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "concurrently": "^6.2.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
+    "serve-handler": "^6.1.3",
+    "terser": "^5.7.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {}
+}
