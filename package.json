@@ -4,7 +4,7 @@
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Smooth scroll to top of the page",
   "types": "build/types",
   "browser": "./build/index.js",
@@ -23,6 +23,16 @@
     "email": "julian.cwirko@gmail.com"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliancwirko/smooth-scroll-top"
+  },
+  "keywords": [
+    "browser",
+    "scroll",
+    "javascript",
+    "es6"
+  ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
