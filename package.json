@@ -4,7 +4,7 @@
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Smooth scroll to top of the page",
   "types": "build/types",
   "browser": "./build/index.js",

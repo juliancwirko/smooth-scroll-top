@@ -6,5 +6,5 @@ export interface SmoothScrollTopOptions {
   icon?: string | HTMLElement;
   width?: string;
   height?: string;
-  position?: 'left' | 'right',
+  position?: 'left' | 'right';
 }

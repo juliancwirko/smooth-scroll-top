@@ -16,12 +16,13 @@ scrollTop.init();
 Also, see the example in the `example` directory.
 
 #### As npm package:
+
 ```
 npm install smooth-scroll-top --save
 ```
 
 ```javascript
-import SmoothScrollTop from 'smooth-scroll-top';
+import SmoothScrollTop from 'smooth-scroll-top'; // es2020 module
 
 (...)
 const scrollTop = new SmoothScrollTop();
@@ -31,6 +32,9 @@ scrollTop.destroy();
 ```
 
 #### In React:
+
+For Create React App works well with Node: `^12.20.0 || ^14.13.1`
+There are problems when using Node `>=16.0.0` (not sure why yet).
 
 ```javascript
 import SmoothScrollTop from 'smooth-scroll-top';

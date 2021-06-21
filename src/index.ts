@@ -4,7 +4,7 @@ import { buttonDefaultStyles } from './button-default-styles.js';
 class SmoothScrollTop {
   private scrollButton: HTMLElement | undefined = undefined;
   private scrollTopEvtListener: EventListenerOrEventListenerObject | undefined;
-  private windowEvtListener : EventListenerOrEventListenerObject | undefined;
+  private windowEvtListener: EventListenerOrEventListenerObject | undefined;
   private ticking: boolean | undefined;
   private options: SmoothScrollTopOptions | undefined;
 
@@ -53,7 +53,11 @@ class SmoothScrollTop {
       this.windowEvtListener = () => {
         if (!this.ticking) {
           window.requestAnimationFrame(() => {
-            if (this.scrollButton && this.options?.visibilityOffset && window.scrollY > this.options.visibilityOffset) {
+            if (
+              this.scrollButton &&
+              this.options?.visibilityOffset &&
+              window.scrollY > this.options.visibilityOffset
+            ) {
               this.scrollButton.style.transform = 'translateY(0)';
             } else if (this.scrollButton) {
               this.scrollButton.style.transform = 'translateY(105%)';
@@ -78,8 +82,14 @@ class SmoothScrollTop {
   destroy(): null {
     // Cleanup
     if (this.scrollButton && document) {
-      document.removeEventListener('scroll', this.windowEvtListener as EventListenerOrEventListenerObject);
-      this.scrollButton.removeEventListener('click', this.scrollTopEvtListener as EventListenerOrEventListenerObject);
+      document.removeEventListener(
+        'scroll',
+        this.windowEvtListener as EventListenerOrEventListenerObject
+      );
+      this.scrollButton.removeEventListener(
+        'click',
+        this.scrollTopEvtListener as EventListenerOrEventListenerObject
+      );
       document.body.removeChild(this.scrollButton);
       this.scrollButton = undefined;
       this.windowEvtListener = undefined;

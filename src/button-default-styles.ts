@@ -1,6 +1,10 @@
 import { SmoothScrollTopOptions } from './types.js';
 
-export const buttonDefaultStyles = (options?: SmoothScrollTopOptions) => options && `
+export const buttonDefaultStyles = (
+  options?: SmoothScrollTopOptions
+): string | undefined =>
+  options &&
+  `
   background-color: ${options.bgColor};
   color: ${options.color};
   position: fixed;
