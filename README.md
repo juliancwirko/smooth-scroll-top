@@ -1,12 +1,14 @@
 ### Smooth Window Scroll Top
 
-JavaScript browser component for scrolling the page to the top. Useful for blogs and content-based sites.
-ES6 modules only.
+This is a JavaScript browser component for scrolling the page to the top. The page will scroll when the user clicks the button attached to the bottom of the page.
+Useful for blogs and content-based sites.
+ES2020 modules.
 
 ### Demo
 
 1. clone the repo
-2. in the project run `npm run build && npm run dev:server` or `npm run dev:watch`
+2. in the project run `npm install`
+2. then run `npm run build && npm run dev:server` or `npm run dev:watch`
 3. go to localhost:3000
 
 ### Usage
@@ -39,8 +41,11 @@ scrollTop.destroy();
 
 #### In React:
 
-For Create React App works well with Node: `^12.20.0 || ^14.13.1`
-There are problems when using Node `>=16.0.0` (not sure why yet).
+For Create React App works well with `Node: ^12.20.0 || ^14.13.1 || >=16.0.0`
+Although there are compromises:
+
+1. I had to leave `"browser": "./build/index.js",` in package.json because the `exports` is not supported yet. Hopefully soon.
+2. I had to remove the optional chaining operator from the code because it was problematic in `Node: >=16.0.0`. (This or switching to `"target": "ES2019",` in tsconfig.json, but this was no go)
 
 ```javascript
 import SmoothScrollTop from 'smooth-scroll-top';

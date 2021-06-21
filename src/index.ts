@@ -2,7 +2,7 @@ import { SmoothScrollTopOptions } from './types.js';
 import { buttonDefaultStyles } from './button-default-styles.js';
 
 class SmoothScrollTop {
-  private scrollButton: HTMLElement | undefined = undefined;
+  private scrollButton: HTMLElement | undefined;
   private scrollTopEvtListener: EventListenerOrEventListenerObject | undefined;
   private windowEvtListener: EventListenerOrEventListenerObject | undefined;
   private ticking: boolean | undefined;
@@ -33,13 +33,15 @@ class SmoothScrollTop {
 
       // Add styling
       this.scrollButton.style.cssText =
-        this.options?.style || buttonDefaultStyles(this.options) || '';
+        (this.options && this.options.style) ||
+        buttonDefaultStyles(this.options) ||
+        '';
 
       // Create the arrow icon
       const arrowIcon = document.createElement('div');
-      if (typeof this.options?.icon === 'string') {
+      if (this.options && typeof this.options.icon === 'string') {
         arrowIcon.innerHTML = this.options.icon;
-      } else if (this.options?.icon instanceof HTMLElement) {
+      } else if (this.options && this.options.icon instanceof HTMLElement) {
         arrowIcon.appendChild(this.options.icon);
       }
 
@@ -55,7 +57,8 @@ class SmoothScrollTop {
           window.requestAnimationFrame(() => {
             if (
               this.scrollButton &&
-              this.options?.visibilityOffset &&
+              this.options &&
+              this.options.visibilityOffset &&
               window.scrollY > this.options.visibilityOffset
             ) {
               this.scrollButton.style.transform = 'translateY(0)';

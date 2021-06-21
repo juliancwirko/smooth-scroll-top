@@ -13,10 +13,18 @@ const dirContents = fs.readdirSync(`${__dirname}/${BUILD_DIR_NAME}`);
 
 dirContents.forEach((name) => {
   if (path.extname(name) === '.js') {
-    const fileContents = fs.readFileSync(`${__dirname}/${BUILD_DIR_NAME}/${name}`, 'utf8');
-    minify(fileContents , { sourceMap: true, mangle: { toplevel: true } }).then((result) => {
-      fs.writeFileSync(`${__dirname}/${BUILD_DIR_NAME}/${name}`, result.code);
-      fs.writeFileSync(`${__dirname}/${BUILD_DIR_NAME}/${name}.map`, result.map);
-    });
+    const fileContents = fs.readFileSync(
+      `${__dirname}/${BUILD_DIR_NAME}/${name}`,
+      'utf8'
+    );
+    minify(fileContents, { sourceMap: true, mangle: { toplevel: true } }).then(
+      (result) => {
+        fs.writeFileSync(`${__dirname}/${BUILD_DIR_NAME}/${name}`, result.code);
+        fs.writeFileSync(
+          `${__dirname}/${BUILD_DIR_NAME}/${name}.map`,
+          result.map
+        );
+      }
+    );
   }
 });
