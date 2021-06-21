@@ -3,6 +3,12 @@
 JavaScript browser component for scrolling the page to the top. Useful for blogs and content-based sites.
 ES6 modules only.
 
+### Demo
+
+1. clone the repo
+2. in the project run `npm run build && npm run dev:server` or `npm run dev:watch`
+3. go to localhost:3000
+
 ### Usage
 
 #### Modern browsers:
