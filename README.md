@@ -11,6 +11,8 @@ ES2020 modules.
 2. then run `npm run build && npm run dev:server` or `npm run dev:watch`
 3. go to localhost:3000
 
+Codepen: [codepen.io/juliancwirko/pen/qBrGOgw](https://codepen.io/juliancwirko/pen/qBrGOgw)
+
 ### Usage
 
 #### Modern browsers:
